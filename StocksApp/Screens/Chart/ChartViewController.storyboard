@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chart View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ChartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ChartViewController" customModule="StocksApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIk-hB-sn7" customClass="Chart" customModule="SwiftChart">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZIc-nu-gkv">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vL4-sH-Lfg">
+                                <rect key="frame" x="0.0" y="29" width="0.0" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="j1u-60-sPd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vL4-sH-Lfg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ArN-1r-4Zw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hIk-hB-sn7" secondAttribute="bottom" id="GZK-kv-F5v"/>
+                            <constraint firstItem="hIk-hB-sn7" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="SgD-pl-aTH"/>
+                            <constraint firstItem="hIk-hB-sn7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="YHs-LP-214"/>
+                            <constraint firstItem="hIk-hB-sn7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="aqX-L3-Cb1"/>
+                            <constraint firstItem="ZIc-nu-gkv" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="chB-2h-3WS"/>
+                            <constraint firstItem="ZIc-nu-gkv" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="pIk-fo-Uos"/>
+                            <constraint firstItem="vL4-sH-Lfg" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="29" id="uRI-7x-dVD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="vL4-sH-Lfg" id="u59-0o-AUK"/>
+                        <outlet property="labelLeadingMarginConstraint" destination="ArN-1r-4Zw" id="zNl-aL-Zmx"/>
+                        <outlet property="loadingActivityIndicatorView" destination="ZIc-nu-gkv" id="5od-6I-LcB"/>
+                        <outlet property="stockChart" destination="hIk-hB-sn7" id="XAp-7S-Dfd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="77.678571428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
